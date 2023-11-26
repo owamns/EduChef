@@ -1,49 +1,49 @@
 import "./inicio-usuario.css";
-import BusquedaPorVoz from "../../components/busquedaPorVoz";
 import DisplayCursos from "../../components/displayCursos";
-import TarjetaCurso from "../../components/TarjetaCurso";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import tarjetas from "../../assets/tarjetas";
+
 function InicioUsuario() {
+	const [alturaDisplayCursos, setAlturaDisplayCursos] =
+		useState("fit-content");
+	const [alturaCursos, setAlturaCursos] = useState("0px");
+
+	useEffect(() => {
+		const BusquedaPorVozHeight = (
+			document.querySelector(".BusquedaPorVozContainer") as HTMLElement
+		)?.offsetHeight;
+		const CursosHeight =
+			BusquedaPorVozHeight -
+			((document.querySelector(".header") as HTMLElement)?.offsetHeight +
+				(document.querySelector(".search") as HTMLElement)
+					?.offsetHeight);
+		if (BusquedaPorVozHeight) {
+			setAlturaDisplayCursos(`${BusquedaPorVozHeight}px`);
+		}
+		if (CursosHeight) {
+			setAlturaCursos(`${CursosHeight}px`);
+		}
+	}, []);
+
 	return (
-		<div className="backgroundDiv">
-			<nav>
-				<a href="#" className="mr-3">
-					Inicio
-				</a>
-				<a href="#" className="mr-1">
-					Cocina
-				</a>
-				<a href="">Perfil</a>
+		<div id="backgroundDivHomeUser">
+			<nav id="navHomeUser">
+				<h3>EduChef</h3>
+				<div id="linksContainer">
+					<Link to={"/home"} className="mr-3">
+						Inicio
+					</Link>
+					<Link to={"/perfil"}>Perfil</Link>
+				</div>
 			</nav>
-			<main>
-				<div className="TituloModulo">
-					<h1>Busqueda de Modulos</h1>
-				</div>
-				<div className="Contenido">
-					<BusquedaPorVoz></BusquedaPorVoz>
-					<DisplayCursos>
-						<TarjetaCurso
-							Name="Curso Gastronomía De La Costa"
-							Instructor="Giacomo Bocchio"
-							Horas={6.5}
-							Dificultad="Baja"
-							Img="http://localhost:5173/recursos/CocinaCosta.jpg"
-						></TarjetaCurso>
-						<TarjetaCurso
-							Name="Curso Cocina Mexicana"
-							Instructor="Ricardo Muñoz"
-							Dificultad="Media"
-							Horas={8}
-							Img="http://localhost:5173/recursos/CocinaMexicana.jpg"
-						></TarjetaCurso>
-						<TarjetaCurso
-							Name="Curso de Parrilla"
-							Instructor="Joaquín Bernal"
-							Dificultad="Media alta"
-							Horas={10}
-							Img="http://localhost:5173/recursos/CursoParrilla.jpg"
-						></TarjetaCurso>
-					</DisplayCursos>
-				</div>
+			<main id="mainHomeUser">
+				<DisplayCursos
+					altura={alturaDisplayCursos}
+					alturaCursos={alturaCursos}
+					header="cursos"
+					items={tarjetas}
+				></DisplayCursos>
 			</main>
 		</div>
 	);

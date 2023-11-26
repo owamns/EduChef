@@ -1,18 +1,29 @@
-import { ReactNode } from "react";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import React from "react";
+import Buscador from "./Buscador";
 
 interface Props {
-	children: ReactNode;
+	altura?: string;
+	alturaCursos?: string;
+	header: string;
+	items: any;
 }
-function DisplayCursos({ children }: Props) {
+function DisplayCursos({ altura, alturaCursos, header, items }: Props) {
+	const styles: { [key: string]: React.CSSProperties } = {
+		displayCursosContainer: {
+			maxHeight: altura,
+		},
+		childrenContainer: {
+			maxHeight: alturaCursos,
+		},
+	};
 	return (
-		<div className="displayCursosContainer">
-			<header>
-				<h3>
-					Modulos
-				</h3>
-				<hr className="Linea"/>
-			</header>
-			<div className="search">
+		<div
+			className="displayCursosContainer"
+			style={styles.displayCursosContainer}
+		>
+			<header className="header">{header}</header>
+			{/* <div className="search">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="16"
@@ -23,7 +34,12 @@ function DisplayCursos({ children }: Props) {
 				>
 					<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
 				</svg>
-				<input type="search" name="" id="searchInput" />
+				<input
+					type="search"
+					name=""
+					id="searchInput"
+					placeholder="Busque por título"
+				/>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="26"
@@ -38,7 +54,10 @@ function DisplayCursos({ children }: Props) {
 					/>
 				</svg>
 			</div>
-			<div className="childrenContainer">{children}</div>
+			<div className="childrenContainer" style={styles.childrenContainer}>
+				{children}
+			</div> */}
+			<Buscador tarjetas={items}></Buscador>
 		</div>
 	);
 }

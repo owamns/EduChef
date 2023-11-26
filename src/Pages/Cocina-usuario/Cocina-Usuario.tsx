@@ -2,6 +2,8 @@ import "./Cocina-usuario.css";
 import { useState } from "react";
 import ListGroup from "../../components/ListGroup";
 import Test from "../Test/Test";
+import { Link } from "react-router-dom";
+
 const items = [
 	"1. Introducción",
 	"2. Lomo Saltado",
@@ -18,21 +20,20 @@ const CocinaUsuario = () => {
 		SetTestCheck(!event.target.checked);
 	};
 	return (
-		<div className="backgroundDiv">
-			<nav>
+		<div id="backgroundDivCocinaUser">
+			<nav id="CocinaUserNav">
 				<h3>Gastronomía de la costa</h3>
 
-				<a href="inicio-usuario.html" className="mr-3">
-					Inicio
-				</a>
-				<a href="#" className="mr-1">
-					Cocina
-				</a>
-				<a href="">Perfil</a>
+				<div id="linksContainer">
+					<Link to={"/home"} className="mr-3">
+						Inicio
+					</Link>
+					<Link to={"/perfil"}>Perfil</Link>
+				</div>
 			</nav>
-			<div className="BodyDiv">
+			<div id="BodyDivCocinaUser">
 				{TestChecked ? (
-					<main>
+					<main id="CocinaUserDiv">
 						<div className="videoContainer">
 							<iframe
 								src="https://www.youtube.com/embed/9dbDFWhF6GU"
@@ -53,7 +54,7 @@ const CocinaUsuario = () => {
 						</div>
 					</main>
 				) : (
-					<main>
+					<main id="CocinaUserDiv">
 						<Test></Test>
 					</main>
 				)}

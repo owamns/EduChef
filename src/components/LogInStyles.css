@@ -52,4 +52,13 @@
 .Botones > button > a {
 	text-decoration: none !important;
 	color: whitesmoke;
+	width: 100%;
+}
+
+.Botones > a{
+	width: 100%;
+}
+
+.btn-primary{
+	width: 100%;
 }

@@ -1,7 +1,5 @@
 import "./LogInStyles.css";
-const handleRedirect = () => {
-	window.open("inicio-usuario.html", "_self");
-};
+import { Link } from "react-router-dom";
 const LogIn = () => {
 	return (
 		<main className="MainContainer">
@@ -40,9 +38,10 @@ const LogIn = () => {
 					</div>
 				</div>
 				<div className="Botones">
-					<button className="btn btn-primary" onClick={handleRedirect}>
-						Iniciar Sesión
-					</button>
+					<Link to={"/home"}>
+						<button className="btn btn-primary">Iniciar Sesion</button>
+					</Link>
+
 					<div>
 						<span>¿No tienes cuenta?</span>
 						<button className="btn btn-secondary">Crear Cuenta</button>
