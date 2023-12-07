@@ -1,0 +1,64 @@
+.LogoTitle{
+	text-transform: uppercase;
+	position: absolute;
+	top: 40%;
+	width: 50vw;
+	font-family: system-ui;
+	font-size: 7rem;
+	font-weight: bold;
+	text-align: center;
+	margin: 0;
+	color: #30c74e;
+	text-shadow: black;
+	text-decoration-line: underline;
+	text-decoration-style: dotted;
+}
+
+.MainContainer {
+	position: relative;
+	left: 50%;
+	width: 50%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	backdrop-filter: blur(5px);
+	border-left: 1px dotted #ffffff;
+}
+
+.LogInContainer {
+	padding: 30px 20px;
+	border-radius: 40px;
+	background: #d6d6d6;
+	width: max-content;
+	height: max-content;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.LogInContainer > h1 {
+	text-align: center;
+	font-family: Rochester;
+}
+.Botones {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 10px;
+}
+.Botones > div {
+	display: flex;
+	flex-direction: column;
+}
+.Botones > button > a {
+	text-decoration: none !important;
+	color: whitesmoke;
+	width: 100%;
+}
+
+.Botones > a{
+	width: 100%;
+}
+
+.btn-primary{
+	width: 100%;
+}

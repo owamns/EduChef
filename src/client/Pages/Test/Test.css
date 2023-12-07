@@ -1,0 +1,51 @@
+.TestContainer {
+	background-color: rgb(255, 255, 255);
+	width: 95%;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	display: flex;
+	flex-direction: column;
+}
+.TestContainer > header {
+	height: 100px;
+	background-color: rgb(255, 255, 255);
+	padding-top: 15px;
+	padding-left: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border-bottom: 1px solid #414141;
+	margin-bottom: 25px;
+}
+.TestForm {
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.TestForm > label {
+	font-size: 20px;
+	font-weight: 600;
+	width: 95%;
+	margin-bottom: 10px;
+}
+.TestForm > input {
+	width: 95%;
+	height: 70px;
+	background-color: #eeeeee;
+	border: 1px solid #bfbfbf;
+	border-radius: 7px;
+	padding-left: 15px;
+	margin-bottom: 30px;
+}
+.btnContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 45px;
+	padding-bottom: 25px;
+}
+.btnContainer > button {
+	padding: 10px 70px;
+}
